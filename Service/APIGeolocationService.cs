@@ -28,11 +28,10 @@ namespace App_APIGeolocation.Service
 
       if (response.IsSuccessStatusCode)
       {
-        // Read the response content
-        string responseBody = await response.Content.ReadAsStringAsync();
-
         Console.WriteLine("Success");
-        return responseBody;
+
+        // Read the response body content
+        return await response.Content.ReadAsStringAsync();
       }
       else
       {

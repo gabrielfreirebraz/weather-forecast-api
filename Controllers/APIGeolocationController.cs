@@ -16,7 +16,7 @@ namespace App_APIGeolocation.Controllers
   {
     [HttpGet("address")]
     // public async Task<IEnumerable<APIGeolocationDTO>> GetAddress()
-    public async Task<string> Get(string address)
+    public async Task<ActionResult<string>> Get(string address)
     {
       // var t = await APIGeolocationService.GetLatLong();
       // Console.WriteLine(address);
