@@ -15,17 +15,15 @@ namespace App_APIGeolocation.Controllers
   public class APIGeolocationController : ControllerBase
   {
     [HttpGet("address")]
-    // public async Task<IEnumerable<APIGeolocationDTO>> GetAddress()
+    // public async Task<IEnumerable<APIGeolocationDTO>> GetGeocoding()
     public async Task<ActionResult<string>> GetGeocoding(string address)
     {
       return Ok(await APIGeolocationService.GetGeocodingAPI(address));
     }
 
     [HttpGet("coordinates")]
-    // public async Task<IEnumerable<APIGeolocationDTO>> GetAddress()
     public async Task<ActionResult<string>> GetCoordinates(string latitude, string longitude)
     {
-      //Console.WriteLine(latitude + " " + longitude);
       return Ok(await APIGeolocationService.GetForecastAPI(latitude, longitude));
     }
   }
