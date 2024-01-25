@@ -10,18 +10,23 @@ using System.Text.Json;
 namespace App_APIGeolocation.Controllers
 {
 
-  [Route("api/coordinates")]
+  [Route("api/geolocation")]
   [ApiController]
   public class APIGeolocationController : ControllerBase
   {
     [HttpGet("address")]
     // public async Task<IEnumerable<APIGeolocationDTO>> GetAddress()
-    public async Task<ActionResult<string>> Get(string address)
+    public async Task<ActionResult<string>> GetGeocoding(string address)
     {
-      // var t = await APIGeolocationService.GetLatLong();
-      // Console.WriteLine(address);
-      // return APIGeolocationService.listTemp;
-      return await APIGeolocationService.GetAPI(address);
+      return Ok(await APIGeolocationService.GetGeocodingAPI(address));
+    }
+
+    [HttpGet("coordinates")]
+    // public async Task<IEnumerable<APIGeolocationDTO>> GetAddress()
+    public async Task<ActionResult<string>> GetCoordinates(string latitude, string longitude)
+    {
+      //Console.WriteLine(latitude + " " + longitude);
+      return Ok(await APIGeolocationService.GetForecastAPI(latitude, longitude));
     }
   }
 }
