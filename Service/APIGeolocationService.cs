@@ -14,7 +14,7 @@ namespace App_APIGeolocation.Service
     // };
 
 
-    public static async Task<string> GetLatLong(string address)
+    public static async Task<string> GetAPI(string address)
     {
 
       // using (HttpClient client = new HttpClient())
