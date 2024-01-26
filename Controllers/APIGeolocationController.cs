@@ -10,11 +10,11 @@ using System.Text.Json;
 namespace App_APIGeolocation.Controllers
 {
 
-  [Route("api/geolocation")]
+  [Route("api")]
   [ApiController]
   public class APIGeolocationController : ControllerBase
   {
-    [HttpGet("address")]
+    [HttpGet("geocoding")]
     // public async Task<IEnumerable<APIGeolocationDTO>> GetGeocoding()
     public async Task<ActionResult<string>> GetGeocoding(string address)
     {

@@ -20,6 +20,14 @@ internal class Program
             app.UseSwaggerUI();
         }
 
+        var allowedOrigin = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
+
+        app.UseCors(builder =>
+            builder
+            .WithOrigins(allowedOrigin)
+            .WithMethods("GET")
+            .AllowAnyHeader());
+
         app.UseHttpsRedirection();
         app.MapControllers();
         app.Run();
