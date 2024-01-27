@@ -22,16 +22,20 @@ How to make web request and response from API Rest
 
 Example **query params to request**:
 
-as url:
-`/api/geocoding?address=75 3rd Ave, New York, NY 10003, USA`
+Curl:
+`
+curl -X 'GET' \
+  'http://localhost:5149/api/geocoding?address=75%203rd%20Ave%2C%20New%20York%2C%20NY%2010003%2C%20USA' \
+  -H 'accept: application/json'
+`
 
-as code (ex: axios):
-```sh
-{
-    params: {
-        address: "75 3rd Ave, New York, NY 10003, USA"
+Axios:
+```js
+const request = await axios.get("http://localhost:5149/api/geocoding", {
+        params: { address: "75 3rd Ave, New York, NY 10003, USA" }
     }
-}
+);
+console.log(request.data);
 ```
 
 Example **json to response**:
@@ -85,17 +89,22 @@ Example **json to response**:
 
 Example **query params to request**:
 
-as url:
- `/api/coordinates?latitude=40.73158525127099&longitude=-73.98833696287879`
+Curl:
+`
+curl -X 'GET' \
+  'http://localhost:5149/api/coordinates?latitude=40.73158525127099&longitude=-73.98833696287879' \
+  -H 'accept: application/json'
+`
 
-as code (ex: axios):
-```sh
-{
+Axios:
+```js
+const request = axios.get("http://localhost:5149/api/coordinates", {
     params: {
         latitude: 40.73158525127099,
         longitude: -73.98833696287879
     }
-}
+});
+console.log(request.data);
 ```
 
 Example **json to response**:
