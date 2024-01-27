@@ -22,7 +22,7 @@ How to make web request and response from API Rest
 
 Example **query params to request**:
 
-Curl:
+Curl:  
 `
 curl -X 'GET' \
   'http://localhost:5149/api/geocoding?address=75%203rd%20Ave%2C%20New%20York%2C%20NY%2010003%2C%20USA' \
@@ -89,7 +89,7 @@ Example **json to response**:
 
 Example **query params to request**:
 
-Curl:
+Curl:   
 `
 curl -X 'GET' \
   'http://localhost:5149/api/coordinates?latitude=40.73158525127099&longitude=-73.98833696287879' \
